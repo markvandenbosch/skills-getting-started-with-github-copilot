@@ -1,0 +1,18 @@
+/* ...existing code... */
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .activity-card {
+  background-color: #1e1e1e;
+  border-color: #333333;
+}
+
+body.dark-mode button {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* ...existing code... */
