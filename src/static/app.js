@@ -4,6 +4,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const signupForm = document.getElementById("signup-form");
   const messageDiv = document.getElementById("message");
 
+  // Add dark mode toggle
+  const darkModeToggle = document.createElement("button");
+  darkModeToggle.id = "dark-mode-toggle";
+  darkModeToggle.textContent = "Toggle Dark Mode";
+  darkModeToggle.style.position = "absolute";
+  darkModeToggle.style.top = "10px";
+  darkModeToggle.style.right = "10px";
+  document.body.appendChild(darkModeToggle);
+
+  // Handle dark mode toggle
+  darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    const isDarkMode = document.body.classList.contains("dark-mode");
+    localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
+  });
+
+  // Apply saved dark mode preference
+  if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
+  }
+
   // Function to fetch activities from API
   async function fetchActivities() {
     try {
